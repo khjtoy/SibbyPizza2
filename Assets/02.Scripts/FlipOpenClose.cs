@@ -8,6 +8,9 @@ public class FlipOpenClose : MonoBehaviour
 	public Animator Flip;
 	public bool open;
 	public Transform Player;
+	public GameObject key;
+
+	float dist;
 
 	void Start()
 	{
@@ -16,9 +19,17 @@ public class FlipOpenClose : MonoBehaviour
 
 	private void Update()
 	{
+		dist = Player.position.DistanceFlat(transform.position);
+		if(dist < 3)
+        {
+			key.SetActive(true);
+        }
+		else
+        {
+			key.SetActive(false);
+        }
 		if (Player && Input.GetKeyDown(KeyCode.F))
 		{
-			float dist = Player.position.DistanceFlat(transform.position);
 			if (dist < 3)
 			{
 				if (open == false)

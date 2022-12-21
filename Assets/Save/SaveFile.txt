@@ -1,6 +1,6 @@
 ﻿{
     "level": 1,
     "predictMode": 1,
-    "currentPizza": "",
+    "currentPizza": "파인애플피자",
     "time": 0
 }
