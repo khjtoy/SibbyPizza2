@@ -97,7 +97,7 @@ public class DayManager : MonoSingleton<DayManager>
         tenMinute = (float)1 / 6;
         DeliveryManager.Instance.AddContent("08:00");
         startTotalMinutes = (int)timeOfDay * 60 + (minute * 10);
-        afterSecond = Random.Range(4, 8) * 10;
+        afterSecond = (Random.Range(6, 9) * 10) - (DataManager.Instance.CurrentUser.level * 5);
     }
 
     private void Update()
@@ -211,7 +211,7 @@ public class DayManager : MonoSingleton<DayManager>
             temp = temp.PadLeft(5, '0');
             DeliveryManager.Instance.AddContent(temp);
             startTotalMinutes = endTotalMinutes;
-            afterSecond = Random.Range(4, 8) * 10;
+            afterSecond = (Random.Range(6, 9) * 10) - (DataManager.Instance.CurrentUser.level * 5);
         }
     }
 }

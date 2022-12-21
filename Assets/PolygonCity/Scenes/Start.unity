@@ -4447,7 +4447,7 @@ MonoBehaviour:
   - name: DayScene
     clip: {fileID: 8300000, guid: 82121544c00d0a948b134ddab1c98d71, type: 3}
     soundMixer: 0
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
