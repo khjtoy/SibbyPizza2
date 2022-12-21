@@ -29,6 +29,5 @@ public class ClearSound : MonoBehaviour
     {
         DataManager.Instance.CurrentUser.level = 1;
         SceneManager.LoadScene("Start");
-        
     }
 }
