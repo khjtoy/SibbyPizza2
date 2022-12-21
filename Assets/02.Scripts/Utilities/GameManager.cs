@@ -15,7 +15,7 @@ public class GameManager : MonoSingleton<GameManager>
         if (life <= 0) return;
         UIManager.Instance.ChangeHeart(life);
         life--;
-        if (life <= 0)
-            SceneManager.LoadScene((int)Define.Scenes.Failure - 1);
+        //if (life <= 0)
+            //SceneManager.LoadScene((int)Define.Scenes.Failure - 1);
     }
 }

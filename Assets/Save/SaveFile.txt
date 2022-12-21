@@ -1,6 +1,9 @@
 ﻿{
-    "level": 1,
+    "level": 3,
     "predictMode": 1,
-    "currentPizza": "치즈피자",
-    "time": 0
+    "currentPizza": "",
+    "time": 0,
+    "currentGoal": 0,
+    "failureGoal": 0,
+    "scapeGoal": 0
 }

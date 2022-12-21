@@ -118,12 +118,12 @@ public class DayManager : MonoSingleton<DayManager>
             DeliveryManager.Instance.AnswerContent();
             if (DeliveryManager.Instance.answerCheck)
             {
+                DataManager.Instance.CurrentUser.scapeGoal = 1;
                 StartCoroutine(DeliveryManager.Instance.SucessContent((int)DeliveryManager.Instance.currentAnswer.place));
                 goalText.DOFade(1, 1f).OnComplete(() =>
                 {
                     goalText.DOFade(0f, 1.5f);
                 });
-                Debug.Log("배달에 성공했네용^^");
             }
             else
             {
@@ -162,8 +162,8 @@ public class DayManager : MonoSingleton<DayManager>
                 return;
             }
             //(Replace with a reference to the game time)
-            timeOfDay += UnityEngine.Time.deltaTime / 30;
-            timer += UnityEngine.Time.deltaTime / 30;
+            timeOfDay += UnityEngine.Time.deltaTime / 5;
+            timer += UnityEngine.Time.deltaTime / 5;
             SetTimeText();
             CheckQuest();
             //timeOfDay %= 24; //Modulus to ensure always between 0-24
