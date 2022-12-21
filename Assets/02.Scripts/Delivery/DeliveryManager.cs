@@ -117,7 +117,7 @@ public class DeliveryManager : MonoSingleton<DeliveryManager>
 
         count.Shuffle();
 
-        int random = UnityEngine.Random.Range(1, worldCount + 1);
+        int random = UnityEngine.Random.Range(1, (DataManager.Instance.CurrentUser.level / 2) + 3);
 
         int[] temp = new int[random];
 
