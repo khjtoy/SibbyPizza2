@@ -5,7 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    public void NewGoToGame()
+    {
+        DataManager.Instance.CurrentUser.level = 1;
+        GotoGame2();
+    }
     public void GotoGame()
+    {
+        if (DataManager.Instance.CurrentUser.level == 1) return;
+        TransitionManager.Instance.LoadScene((int)Define.Scenes.Day);
+        SoundManager.Instance.Stop("StartLobby");
+    }
+
+    public void GotoGame2()
     {
         TransitionManager.Instance.LoadScene((int)Define.Scenes.Day);
         SoundManager.Instance.Stop("StartLobby");
@@ -14,5 +26,14 @@ public class ButtonManager : MonoBehaviour
     public void GotoStart()
     {
         SceneManager.LoadScene((int)Define.Scenes.Start - 1);
+    }
+
+    public void GameExit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit(); // 어플리케이션 종료
+#endif
     }
 }

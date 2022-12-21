@@ -2122,6 +2122,7 @@ GameObject:
   - component: {fileID: 460536289}
   - component: {fileID: 460536288}
   - component: {fileID: 460536287}
+  - component: {fileID: 460536290}
   m_Layer: 0
   m_Name: SettingCanvas
   m_TagString: Untagged
@@ -2136,7 +2137,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460536285}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -2149,8 +2150,8 @@ RectTransform:
   - {fileID: 2011308399}
   - {fileID: 1639204537}
   - {fileID: 1107668164}
-  m_Father: {fileID: 847935856}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2218,6 +2219,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &460536290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460536285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22aadac012070374ea371f1ff6b3263b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCheck: 0
 --- !u!1 &470489263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4253,7 +4267,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 876797821}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: GotoGame
+        m_MethodName: NewGoToGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4357,10 +4371,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 460536286}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &847935857
 MonoBehaviour:
@@ -4453,6 +4466,7 @@ MonoBehaviour:
   BGMslider: {fileID: 1639204536}
   SFXvolume: -10
   BGMvolume: -10
+  SettingPanel: {fileID: 460536285}
 --- !u!1001 &857201651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4776,7 +4790,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &884008986 stripped
 Transform:
@@ -4890,6 +4904,7 @@ MonoBehaviour:
   - {fileID: 1628228838}
   - {fileID: 1047466669}
   pizzaMoveIndex: {fileID: 1690102163}
+  continueButton: {fileID: 1622816346}
 --- !u!1 &944810985
 GameObject:
   m_ObjectHideFlags: 0
@@ -7520,7 +7535,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7901,7 +7916,7 @@ RectTransform:
   - {fileID: 2135704206}
   - {fileID: 1015773119}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8736,7 +8751,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1622816346}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 876797821}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: GotoGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1622816346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11401,9 +11428,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 914360054}
-        m_TargetAssemblyTypeName: StartSceneInGameManager, Assembly-CSharp
-        m_MethodName: Quit
+      - m_Target: {fileID: 876797821}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: GameExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13622,6 +13649,7 @@ MonoBehaviour:
   Flip: {fileID: 4501038489752060400}
   open: 0
   Player: {fileID: 0}
+  key: {fileID: 0}
 --- !u!114 &4517192617665834956
 MonoBehaviour:
   m_ObjectHideFlags: 0

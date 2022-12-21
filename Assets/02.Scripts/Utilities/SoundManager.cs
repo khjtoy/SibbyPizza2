@@ -43,15 +43,28 @@ public class SoundManager : MonoSingleton<SoundManager>
     public float SFXvolume;
     public float BGMvolume;
 
+    protected override void Init()
+    {
+        base.Init();
+        CheckSetting[] CheckObj = FindObjectsOfType<CheckSetting>();
+
+        if (CheckObj.Length > 1)
+        {
+            foreach (CheckSetting check in CheckObj)
+            {
+                if (!check.isCheck)
+                    Destroy(check.gameObject);
+            }
+        }
+    }
+
+    [SerializeField]
     private GameObject SettingPanel;
 
     private void Awake()
     {
-        if (SettingPanel == null)
-        {
-            SettingPanel = this.gameObject.transform.GetChild(0).gameObject;
-        }
-
+        DontDestroyOnLoad(SettingPanel);
+        SettingPanel.GetComponent<CheckSetting>().isCheck = true;
         int index = 0;
         foreach (Sound s in sounds)
         {

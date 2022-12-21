@@ -19,7 +19,6 @@ public class DeliveryManager : MonoSingleton<DeliveryManager>
     private Transform content;
     public int worldCount;
 
-    Queue<GameObject> q = new Queue<GameObject>();
 
     private List<GameObject> pos = new List<GameObject>();
     
@@ -35,6 +34,14 @@ public class DeliveryManager : MonoSingleton<DeliveryManager>
 
     public AnswerSO currentAnswer;
     public bool answerCheck = false;
+
+    public Transform GetDeliveryPos
+    {
+        get
+        {
+            return DeliveryPos;
+        }
+    }
     protected override void Init()
     {
         base.Init();

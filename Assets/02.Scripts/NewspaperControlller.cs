@@ -147,7 +147,6 @@ public class NewspaperControlller : MonoBehaviour
     {
         if (DataManager.Instance != null)
         {
-            DataManager.Instance.CurrentUser.predictMode = 1;
             scapeImage.sprite = scapeSprites[day - 1];
             dayText.DOText($"DAY {day}", 2f).SetEase(Ease.Linear).OnComplete(() =>
             {

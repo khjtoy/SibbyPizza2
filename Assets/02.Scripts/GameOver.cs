@@ -12,7 +12,7 @@ public class GameOver : MonoBehaviour
     {
         Destroy(DayManager.Instance.DirectionLight.gameObject);
         Destroy(DayManager.Instance.gameObject);
-        Destroy(UIManager.Instance.DontDestroyedCanvas);
+        UIManager.Instance.DontDestroyedCanvas.gameObject.SetActive(false);
         StartCoroutine(GameOverAction());
     }
 

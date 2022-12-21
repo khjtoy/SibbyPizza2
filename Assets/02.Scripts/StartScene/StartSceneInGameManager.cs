@@ -68,6 +68,9 @@ public class StartSceneInGameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI pizzaMoveIndex;
 
+    [SerializeField]
+    private Image continueButton;
+
     private int pizzaMoveTutoIDX;
 
     private void Awake()
@@ -91,6 +94,12 @@ public class StartSceneInGameManager : MonoBehaviour
         if (Application.isPlaying)
         {
             tenMinute = (float)1 / 6;
+        }
+
+        if(DataManager.Instance.CurrentUser.level == 1)
+        {
+            Debug.Log("check");
+            continueButton.color = new Color(1, 1, 1, 0.04f);
         }
 
         StartCoroutine(ClickInput());

@@ -20,7 +20,8 @@ public class Calculate : MonoBehaviour
     {
         Destroy(DayManager.Instance.DirectionLight.gameObject);
         Destroy(DayManager.Instance.gameObject);
-        Destroy(UIManager.Instance.DontDestroyedCanvas);
+        Destroy(UIManager.Instance.DontDestroyedCanvas.gameObject);
+        Destroy(UIManager.Instance.gameObject);
         StartCoroutine("ShowCost");
         costObj[0].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{DataManager.Instance.CurrentUser.currentGoal}";
         costObj[1].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{DataManager.Instance.CurrentUser.failureGoal}";
