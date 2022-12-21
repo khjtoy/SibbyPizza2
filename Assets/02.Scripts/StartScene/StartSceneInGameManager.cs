@@ -45,6 +45,31 @@ public class StartSceneInGameManager : MonoBehaviour
     [SerializeField]
     private GameObject[] Button;
 
+    [SerializeField]
+    private GameObject howToPlayPanel;
+
+    [SerializeField]
+    private GameObject[] daySceneTuto;
+    [SerializeField]
+    private TextMeshProUGUI dayIndex;
+
+    private int daySceneTutoIDX;
+    
+
+    [SerializeField]
+    private GameObject[] pizzaMakeTuto;
+    [SerializeField]
+    private TextMeshProUGUI pizzaMakeIndex;
+
+    private int pizzaMakeTutoIDX;
+
+    [SerializeField]
+    private GameObject[] pizzaMoveTuto;
+    [SerializeField]
+    private TextMeshProUGUI pizzaMoveIndex;
+
+    private int pizzaMoveTutoIDX;
+
     private void Awake()
     {
         SoundManager.Instance.AllStop();
@@ -53,7 +78,9 @@ public class StartSceneInGameManager : MonoBehaviour
     private void Start()
     {
         SoundManager.Instance.Play("StartLobby");
-
+        daySceneTutoIDX = 0;
+        pizzaMakeTutoIDX = 0;
+        pizzaMoveTutoIDX = 0;
         timeOfDay = 9f;
 
         mainCamera = Camera.main;
@@ -193,8 +220,77 @@ public class StartSceneInGameManager : MonoBehaviour
 
     public void HowtoPlay()
     {
-
+        howToPlayPanel.SetActive(true);
     }
+   
+    public void howToPlayQuit()
+    {
+        howToPlayPanel.SetActive(false);
+    }
+
+    public void DaySceneTutoOn()
+    {
+        dayIndex.gameObject.SetActive(true);
+        dayIndex.text = ((daySceneTutoIDX % daySceneTuto.Length) + 1).ToString();
+        daySceneTuto[daySceneTutoIDX % daySceneTuto.Length].SetActive(true);
+    }
+
+    public void DaySceneTutoOff()
+    {
+        dayIndex.gameObject.SetActive(false);
+        daySceneTuto[daySceneTutoIDX].SetActive(false);
+    }
+
+    public void NextDaySceneTuto()
+    {
+        daySceneTuto[(daySceneTutoIDX % daySceneTuto.Length)].SetActive(false);
+        daySceneTutoIDX++;
+        dayIndex.text = ((daySceneTutoIDX % daySceneTuto.Length) + 1).ToString();
+        daySceneTuto[(daySceneTutoIDX % daySceneTuto.Length)].SetActive(true);
+    }
+
+    public void MakeSceneTutoOn()
+    {
+        pizzaMakeIndex.gameObject.SetActive(true);
+        pizzaMakeIndex.text = ((pizzaMakeTutoIDX % pizzaMakeTuto.Length) + 1).ToString();
+        pizzaMakeTuto[pizzaMakeTutoIDX % pizzaMakeTuto.Length].SetActive(true);
+    }
+
+    public void MakeSceneTutoOff()
+    {
+        pizzaMakeIndex.gameObject.SetActive(false);
+        pizzaMakeTuto[pizzaMakeTutoIDX % pizzaMakeTuto.Length].SetActive(false);
+    }
+
+    public void NextPizzaMakeTuto()
+    {
+        pizzaMakeTuto[pizzaMakeTutoIDX % pizzaMakeTuto.Length].SetActive(false);
+        pizzaMakeTutoIDX++;
+        pizzaMakeIndex.text = ((pizzaMakeTutoIDX % pizzaMakeTuto.Length) + 1).ToString();
+        pizzaMakeTuto[(pizzaMakeTutoIDX % pizzaMakeTuto.Length)].SetActive(true);
+    }
+
+    public void MoveSceneTutoOn()
+    {
+        pizzaMoveIndex.gameObject.SetActive(true);
+        pizzaMoveIndex.text = ((pizzaMoveTutoIDX % pizzaMoveTuto.Length) + 1).ToString();
+        pizzaMoveTuto[pizzaMoveTutoIDX % pizzaMoveTuto.Length].SetActive(true);
+    }
+
+    public void MoveSceneTutoOff()
+    {
+        pizzaMoveIndex.gameObject.SetActive(false);
+        pizzaMoveTuto[pizzaMoveTutoIDX % pizzaMoveTuto.Length].SetActive(false);
+    }
+
+    public void NextPizzaMoveTuto()
+    {
+        pizzaMoveTuto[pizzaMoveTutoIDX % pizzaMoveTuto.Length].SetActive(false);
+        pizzaMoveTutoIDX++;
+        pizzaMoveIndex.text = ((pizzaMoveTutoIDX % pizzaMoveTuto.Length) + 1).ToString();
+        pizzaMoveTuto[(pizzaMoveTutoIDX % pizzaMoveTuto.Length)].SetActive(true);
+    }
+
 
     public void Quit()
     {
