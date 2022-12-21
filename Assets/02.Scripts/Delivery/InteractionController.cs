@@ -53,7 +53,7 @@ public class InteractionController : MonoBehaviour
                 }
                 if (DeliveryManager.Instance.HasGoal(goalCheck.ShopName))
                 {
-                    if ((int)DeliveryManager.Instance.currentAnswer.place != goalCheck.ShopName)
+                    if ((int)DeliveryManager.Instance.currentAnswer.place != goalCheck.ShopName || DayManager.Instance.isCheck)
                     {
                         Debug.Log("목표 장소!");
                         uiParticle.Emit(10);

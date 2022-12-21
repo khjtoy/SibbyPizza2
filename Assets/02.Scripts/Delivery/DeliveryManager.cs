@@ -191,6 +191,9 @@ public class DeliveryManager : MonoSingleton<DeliveryManager>
 
     public bool HasGoal(int deliveryIdx)
     {
+
+        if (!DayManager.Instance.isCheck)
+        {
             if (deliveryIdx == (int)currentAnswer.place)
             {
                 if (currentAnswer.time - DayManager.Instance.Time == 1 && currentAnswer.pizza == DataManager.Instance.CurrentUser.currentPizza)
@@ -201,7 +204,7 @@ public class DeliveryManager : MonoSingleton<DeliveryManager>
                 else
                     return false;
             }
-            
+        } 
 
         if(currentDeliveyPos.ContainsKey(deliveryIdx) && currentDeliveyPos[deliveryIdx].GetComponent<Quest>().orderPizza == DataManager.Instance.CurrentUser.currentPizza)
         {
@@ -224,6 +227,7 @@ public class DeliveryManager : MonoSingleton<DeliveryManager>
 
     public IEnumerator DisableContent(string time, bool isSpawn = true)
     {
+        DataManager.Instance.CurrentUser.failureGoal++;
         yield return new WaitForSeconds(0.3f);
         content.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0.9f);
         GameManager.Instance.DecreaseLife();
@@ -237,6 +241,7 @@ public class DeliveryManager : MonoSingleton<DeliveryManager>
 
     public IEnumerator SucessContent(int deliveryIdx)
     {
+        DataManager.Instance.CurrentUser.currentGoal++;
         isCheck = true;
         currentOrder--;
         yield return new WaitForSeconds(0.3f);
