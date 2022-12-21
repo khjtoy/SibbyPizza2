@@ -787,6 +787,7 @@ MonoBehaviour:
   - {fileID: 953949290}
   - {fileID: 997716174}
   okButton: {fileID: 0}
+  day: {fileID: 748190453}
 --- !u!1 &211111953
 GameObject:
   m_ObjectHideFlags: 0

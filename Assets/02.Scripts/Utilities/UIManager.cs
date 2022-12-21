@@ -21,9 +21,14 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField]
     private Transform heartParent;
     [SerializeField]
+    private Transform heartParent2;
+    [SerializeField]
     private Sprite brokenHeart;
+    [SerializeField]
+    private Sprite brokenHeart2;
 
     private GameObject[] hearts;
+    private GameObject[] hearts2;
 
     protected override void Init()
     {
@@ -48,7 +53,9 @@ public class UIManager : MonoSingleton<UIManager>
         DontDestroyOnLoad(dontDestroyedCanvas);
         dontDestroyedCanvas.GetComponent<CheckObject>().isCheck = true;
         hearts = heartParent.AllChildrenObjArray();
+        hearts2 = heartParent2.AllChildrenObjArray();
         SetPizzaText();
+        SetHeart();
     }
 
     public void SetPizzaText()
@@ -59,5 +66,22 @@ public class UIManager : MonoSingleton<UIManager>
     public void ChangeHeart(int life)
     {
         hearts[5 - life].GetComponent<Image>().sprite = brokenHeart;
+    }
+
+    public void SetHeart()
+    {
+        for(int i = 0; i < 5 - DataManager.Instance.CurrentUser.life; i++)
+        {
+            hearts[i].GetComponent<Image>().sprite = brokenHeart;
+        }
+        for (int i = 0; i < 2 - DataManager.Instance.CurrentUser.life2; i++)
+        {
+            hearts2[i].GetComponent<Image>().sprite = brokenHeart2;
+        }
+    }
+
+    public void ChangeHeart2(int life)
+    {
+        hearts2[2 - life].GetComponent<Image>().sprite = brokenHeart2;
     }
 }

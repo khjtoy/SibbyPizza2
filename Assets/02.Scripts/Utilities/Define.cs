@@ -21,7 +21,8 @@ public class Define
         Shop,
         PizzaMake,
         Cost,
-        Failure
+        Failure,
+        Clear
     }
 
     public enum Shop

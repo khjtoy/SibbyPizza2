@@ -537,8 +537,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 958417592}
-  m_RootOrder: 1
+  m_Father: {fileID: 267651465}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -914,6 +914,44 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &267651464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 267651465}
+  m_Layer: 5
+  m_Name: Heart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &267651465
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267651464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 141673267}
+  - {fileID: 1811203485}
+  m_Father: {fileID: 958417592}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &294574994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,8 +1425,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 398626863}
-  - component: {fileID: 398626862}
-  - component: {fileID: 398626861}
   - component: {fileID: 398626860}
   - component: {fileID: 398626859}
   m_Layer: 0
@@ -1413,7 +1449,9 @@ MonoBehaviour:
   dontDestroyedCanvas: {fileID: 1554722986}
   curPizzaText: {fileID: 1305991290}
   heartParent: {fileID: 988031352}
+  heartParent2: {fileID: 267651465}
   brokenHeart: {fileID: 21300000, guid: 6a76d645add93914792f5f9881c9c205, type: 3}
+  brokenHeart2: {fileID: 21300000, guid: 45a65b9eb0105114498de5485ea1e6c3, type: 3}
 --- !u!114 &398626860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1463,124 +1501,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c5053d70d48738544a7f722e908bf4ee, type: 3}
   - {fileID: 21300000, guid: 6e21ebf83a0ddeb49a367d609e57a5b4, type: 3}
   - {fileID: 21300000, guid: 1e095812ed1a5984e877864284ad3287, type: 3}
---- !u!114 &398626861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398626858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0f1f31281241343a03769e216108d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: Walking
-    clip: {fileID: 8300000, guid: b95ed7f1546144348ae3f184d9fc32ad, type: 3}
-    soundMixer: 1
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: Running
-    clip: {fileID: 8300000, guid: 923189d713e049743a379e6d6686ec09, type: 3}
-    soundMixer: 1
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: CarCrash
-    clip: {fileID: 8300000, guid: fb032439eaa4ed94b961d9211c20bb81, type: 3}
-    soundMixer: 1
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Jump
-    clip: {fileID: 8300000, guid: 783833bdb44b51240ac63f72ef8b1498, type: 3}
-    soundMixer: 1
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: StartLobby
-    clip: {fileID: 8300000, guid: 2add68a362c0316468ed1dfe5edff837, type: 3}
-    soundMixer: 0
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: Day
-    clip: {fileID: 8300000, guid: 8adde1a36c298b946921a57887b149d3, type: 3}
-    soundMixer: 0
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: Night
-    clip: {fileID: 8300000, guid: 8adde1a36c298b946921a57887b149d3, type: 3}
-    soundMixer: 0
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: PizzaShop
-    clip: {fileID: 8300000, guid: 9b39a39b1e1473b4984fc21ddb470ac1, type: 3}
-    soundMixer: 0
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: DayScene
-    clip: {fileID: 8300000, guid: 82121544c00d0a948b134ddab1c98d71, type: 3}
-    soundMixer: 0
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: GameOver
-    clip: {fileID: 8300000, guid: afdb9cda38d57244780d87bab857deb9, type: 3}
-    soundMixer: 0
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  AudioMixerGroups:
-  - {fileID: -5996766462394179871, guid: ab1c5917cc65c1a40b11b75135a42f20, type: 2}
-  - {fileID: -7054949318096932253, guid: ab1c5917cc65c1a40b11b75135a42f20, type: 2}
-  audioMixer: {fileID: 24100000, guid: ab1c5917cc65c1a40b11b75135a42f20, type: 2}
-  SFXslider: {fileID: 0}
-  BGMslider: {fileID: 0}
-  SFXvolume: -10
-  BGMvolume: -10
---- !u!114 &398626862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398626858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a080298b4105155459b97fb0de46573e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemsToPool:
-  - objectToPool: {fileID: 2493101124809527727, guid: ab60daf0cc4329f40a4f6ddf61bec3cc, type: 3}
-    amountToPool: 1
-    shouldExpand: 0
-  - objectToPool: {fileID: 2472709134954952061, guid: 2e17f8fae7a3cd64baa47716c29e22c5, type: 3}
-    amountToPool: 20
-    shouldExpand: 0
-  - objectToPool: {fileID: 5550932223116990865, guid: 9d840d91bdf5e174388b1f2c7f7bd469, type: 3}
-    amountToPool: 4
-    shouldExpand: 0
-  - objectToPool: {fileID: 8924077817694099735, guid: 10bdbc11758c7a44cad5b22af878b3b7, type: 3}
-    amountToPool: 11
-    shouldExpand: 0
-  changeParent: []
-  pooledObjects: []
 --- !u!4 &398626863
 Transform:
   m_ObjectHideFlags: 0
@@ -7262,8 +7182,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 988031352}
-  - {fileID: 141673267}
-  - {fileID: 1811203485}
+  - {fileID: 267651465}
   m_Father: {fileID: 1554722987}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10069,8 +9988,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 958417592}
-  m_RootOrder: 2
+  m_Father: {fileID: 267651465}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

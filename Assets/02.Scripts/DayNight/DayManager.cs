@@ -162,8 +162,8 @@ public class DayManager : MonoSingleton<DayManager>
                 return;
             }
             //(Replace with a reference to the game time)
-            timeOfDay += UnityEngine.Time.deltaTime / 5;
-            timer += UnityEngine.Time.deltaTime / 5;
+            timeOfDay += UnityEngine.Time.deltaTime / 40;
+            timer += UnityEngine.Time.deltaTime / 40;
             SetTimeText();
             CheckQuest();
             //timeOfDay %= 24; //Modulus to ensure always between 0-24

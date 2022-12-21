@@ -8,17 +8,27 @@ public class ButtonManager : MonoBehaviour
     public void NewGoToGame()
     {
         DataManager.Instance.CurrentUser.level = 1;
+        DataManager.Instance.CurrentUser.life = 5;
+        DataManager.Instance.CurrentUser.life2 = 2;
         GotoGame2();
     }
     public void GotoGame()
     {
         if (DataManager.Instance.CurrentUser.level == 1) return;
+        DataManager.Instance.CurrentUser.currentGoal = 0;
+        DataManager.Instance.CurrentUser.failureGoal = 0;
+        DataManager.Instance.CurrentUser.scapeGoal = 0;
+        DataManager.Instance.CurrentUser.currentPizza = "";
         TransitionManager.Instance.LoadScene((int)Define.Scenes.Day);
         SoundManager.Instance.Stop("StartLobby");
     }
 
     public void GotoGame2()
     {
+        DataManager.Instance.CurrentUser.currentGoal = 0;
+        DataManager.Instance.CurrentUser.failureGoal = 0;
+        DataManager.Instance.CurrentUser.scapeGoal = 0;
+        DataManager.Instance.CurrentUser.currentPizza = "";
         TransitionManager.Instance.LoadScene((int)Define.Scenes.Day);
         SoundManager.Instance.Stop("StartLobby");
     }

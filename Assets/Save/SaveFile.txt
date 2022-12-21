@@ -1,8 +1,10 @@
 ﻿{
-    "level": 4,
-    "currentPizza": "감자피자",
+    "level": 3,
+    "currentPizza": "",
     "time": 0,
     "currentGoal": 0,
-    "failureGoal": 1,
-    "scapeGoal": 0
+    "failureGoal": 0,
+    "scapeGoal": 0,
+    "life": 3,
+    "life2": 0
 }

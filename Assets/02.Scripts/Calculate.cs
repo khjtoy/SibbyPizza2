@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Calculate : MonoBehaviour
@@ -9,6 +10,8 @@ public class Calculate : MonoBehaviour
     private GameObject[] costObj;
     [SerializeField]
     private GameObject okButton;
+    [SerializeField]
+    private TextMeshProUGUI day;
 
     private void Awake()
     {
@@ -18,18 +21,15 @@ public class Calculate : MonoBehaviour
 
     private void Start()
     {
+        day.text = $"{DataManager.Instance.CurrentUser.level}일차";
         Destroy(DayManager.Instance.DirectionLight.gameObject);
         Destroy(DayManager.Instance.gameObject);
         Destroy(UIManager.Instance.DontDestroyedCanvas.gameObject);
-        Destroy(UIManager.Instance.gameObject);
-        StartCoroutine("ShowCost");
-        costObj[0].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{DataManager.Instance.CurrentUser.currentGoal}";
-        costObj[1].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{DataManager.Instance.CurrentUser.failureGoal}";
-
         if (DataManager.Instance.CurrentUser.scapeGoal == 0)
         {
             costObj[2].transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = Color.red;
             costObj[2].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "실패";
+            GameManager.Instance.DecreaseLife2();
         }
         else
         {
@@ -37,10 +37,17 @@ public class Calculate : MonoBehaviour
             costObj[2].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "성공";
         }
 
+        Destroy(UIManager.Instance.gameObject);
+        StartCoroutine("ShowCost");
+        costObj[0].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{DataManager.Instance.CurrentUser.currentGoal}";
+        costObj[1].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"{DataManager.Instance.CurrentUser.failureGoal}";
+
+
         DataManager.Instance.CurrentUser.level++;
         DataManager.Instance.CurrentUser.currentGoal = 0;
         DataManager.Instance.CurrentUser.failureGoal = 0;
         DataManager.Instance.CurrentUser.scapeGoal = 0;
+        DataManager.Instance.CurrentUser.currentPizza = "";
     }
 
     private IEnumerator ShowCost()
@@ -57,6 +64,16 @@ public class Calculate : MonoBehaviour
     {
         if(PoolManager.IsInstantiated)
             PoolManager.Instance.AllDespawn();
+        if (DataManager.Instance.CurrentUser.life2 <= 0)
+        {
+            SceneManager.LoadScene((int)Define.Scenes.Failure);
+            return;
+        }
+        if (DataManager.Instance.CurrentUser.level >= 8)
+        {
+            SceneManager.LoadScene((int)Define.Scenes.Clear);
+            return;
+        }
         TransitionManager.Instance.LoadScene((int)Define.Scenes.Day);
     }
 }

@@ -12,6 +12,8 @@ public class PlayerHitState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        DataManager.Instance.CurrentUser.currentPizza = "";
+        UIManager.Instance.SetPizzaText();
         StopAnimation(stateMachine.Player.AnimationData.GroundedParameterHash);
         StartAnimation(stateMachine.Player.AnimationData.HitParameterHash);
 
