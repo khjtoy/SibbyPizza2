@@ -13,8 +13,8 @@ public class ClearSound : MonoBehaviour
 
     void Start()
     {
-        //SoundManager.Instance.AllStop();
-        //SoundManager.Instance.Play("GameClear");
+        SoundManager.Instance.AllStop();
+        SoundManager.Instance.Play("GameClear");
         StartCoroutine(panelOn());
 
     }
