@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Sound
@@ -148,5 +149,10 @@ public class SoundManager : MonoSingleton<SoundManager>
             s.source.Stop();
             Debug.Log(soundDic[i]);
         }
+    }
+
+    public void GoMain()
+    {
+        SceneManager.LoadScene("Start");
     }
 }

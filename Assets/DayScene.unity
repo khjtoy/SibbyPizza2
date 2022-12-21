@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scapeSprites:
-  - {fileID: 21300000, guid: f118017ef90d33f409cde969d17f4448, type: 3}
+  - {fileID: 21300000, guid: 367c61f60dd9df94f962445654c96d41, type: 3}
   - {fileID: 21300000, guid: d5b52bd2f35e60c4e849138d337d355b, type: 3}
   - {fileID: 21300000, guid: 3d9282896a52ea14e98043a77fd41891, type: 3}
   - {fileID: 21300000, guid: d85723af8c7fd224992e6ff6fa6ee027, type: 3}
