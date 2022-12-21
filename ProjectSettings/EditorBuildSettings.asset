@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/PolygonCity/Scenes/Start.unity
     guid: cb4481103ff00114ebc9bfa0bfbbf030
   - enabled: 1
-    path: Assets/Scenes/DayScene.unity
-    guid: 8cf2aa1576fb697448fba0917dddf549
+    path: Assets/DayScene.unity
+    guid: 8f34126577c43d6418de75a949312b31
   - enabled: 1
     path: Assets/PolygonCity/Scenes/Demo 3.unity
     guid: 5af9dc6338f72624abf9cdb704ea6a6e
