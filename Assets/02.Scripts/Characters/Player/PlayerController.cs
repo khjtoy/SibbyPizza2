@@ -53,6 +53,11 @@ public class PlayerController : MonoBehaviour
         movementStateMachine.HandleInput();
 
         movementStateMachine.Update();
+
+        if(UnityEngine.Input.GetKeyDown(KeyCode.I))
+        {
+            transform.SetPositionY(1);
+        }
     }
 
     private void FixedUpdate()

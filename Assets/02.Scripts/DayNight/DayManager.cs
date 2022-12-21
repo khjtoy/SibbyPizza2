@@ -39,8 +39,6 @@ public class DayManager : MonoSingleton<DayManager>
     [SerializeField]
     private float tenMinute;
 
-    private DeliveryManager deliveryManager;
-
     public int startTotalMinutes;
     public int afterSecond;
     public int endTotalMinutes;
@@ -96,9 +94,8 @@ public class DayManager : MonoSingleton<DayManager>
     {
         DontDestroyOnLoad(directionalLight);
         directionalLight.GetComponent<CheckObject>().isCheck = true;
-        deliveryManager = GetComponent<DeliveryManager>();
         tenMinute = (float)1 / 6;
-        deliveryManager.AddContent("08:00");
+        DeliveryManager.Instance.AddContent("08:00");
         startTotalMinutes = (int)timeOfDay * 60 + (minute * 10);
         afterSecond = Random.Range(4, 8) * 10;
     }
@@ -116,12 +113,12 @@ public class DayManager : MonoSingleton<DayManager>
                 h++;
         }
 
-        if (deliveryManager.currentAnswer.time == Time && !isCheck)
+        if (DeliveryManager.Instance.currentAnswer.time == Time && !isCheck)
         {
-            deliveryManager.AnswerContent();
-            if (deliveryManager.answerCheck)
+            DeliveryManager.Instance.AnswerContent();
+            if (DeliveryManager.Instance.answerCheck)
             {
-                StartCoroutine(deliveryManager.SucessContent((int)deliveryManager.currentAnswer.place));
+                StartCoroutine(DeliveryManager.Instance.SucessContent((int)DeliveryManager.Instance.currentAnswer.place));
                 goalText.DOFade(1, 1f).OnComplete(() =>
                 {
                     goalText.DOFade(0f, 1.5f);
@@ -212,7 +209,7 @@ public class DayManager : MonoSingleton<DayManager>
         {
             string temp = $"{(int)h}:{minute}0";
             temp = temp.PadLeft(5, '0');
-            deliveryManager.AddContent(temp);
+            DeliveryManager.Instance.AddContent(temp);
             startTotalMinutes = endTotalMinutes;
             afterSecond = Random.Range(4, 8) * 10;
         }

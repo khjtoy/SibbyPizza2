@@ -5,6 +5,7 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 
 public class DeliveryManager : MonoSingleton<DeliveryManager>
@@ -58,7 +59,8 @@ public class DeliveryManager : MonoSingleton<DeliveryManager>
                 }*/
 
 
-        PredictPos();
+        //PredictPos();
+        //PredictPos(true);
     }
 
     public void RandomPos()
@@ -72,9 +74,12 @@ public class DeliveryManager : MonoSingleton<DeliveryManager>
         reticle.SetActive(true);
     }
 
-    public void PredictPos()
+    public void PredictPos(bool must = false)
     {
-        if (currentOrder >= 2) return;
+        if (currentOrder <= 0) return;
+        if (currentOrder >= 2 && !must) return;
+        if (SceneManager.GetActiveScene().buildIndex == (int)Define.Scenes.Shop - 1 && !must) return;
+
         foreach(GameObject deliveyPos in pos)
         {
             reticle = PoolManager.Instance.GetPooledObject((int)Define.PoolObject.PredictReticle);

@@ -43,7 +43,7 @@ namespace GenshinImpactMovementSystem
 
         private void ToggleCursor()
         {
-            Cursor.visible = !Cursor.visible;
+            Cursor.visible = false;
 
             if (!Cursor.visible)
             {

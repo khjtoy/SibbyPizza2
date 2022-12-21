@@ -14,18 +14,12 @@ public class InteractionController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI warningText;
 
-    private DeliveryManager deliveryManager;
-
     [SerializeField]
     private Animator transitionAnimator;
 
     [SerializeField]
     private ParticleSystem uiParticle;
 
-    private void Awake()
-    {
-        deliveryManager = FindObjectOfType<DeliveryManager>();
-    }
 
     private void Update()
     {
@@ -35,6 +29,20 @@ public class InteractionController : MonoBehaviour
             if (goalCheck.ChangeScene)
             {
                 //transitionAnimator.Play("TransitionAnimation");
+                
+                if(goalCheck.SceneName == (int)Define.Scenes.Shop)
+                {
+                   List<GameObject> reticles = PoolManager.Instance.GetAllPooledObjects((int)Define.PoolObject.PredictReticle);
+                    foreach(GameObject reticle in reticles)
+                    {
+                        PoolManager.Instance.Despawn(reticle);
+                    }
+                }
+                if(goalCheck.SceneName == (int)Define.Scenes.Street)
+                {
+                    DeliveryManager.Instance.PredictPos(true);
+                }
+                
                 TransitionManager.Instance.LoadScene(goalCheck.SceneName);
             }
             else
@@ -43,9 +51,9 @@ public class InteractionController : MonoBehaviour
                 {
                     Instantiate(pizzaBox, goal.transform.position, Quaternion.identity);
                 }
-                if (deliveryManager.HasGoal(goalCheck.ShopName))
+                if (DeliveryManager.Instance.HasGoal(goalCheck.ShopName))
                 {
-                    if ((int)deliveryManager.currentAnswer.place != goalCheck.ShopName)
+                    if ((int)DeliveryManager.Instance.currentAnswer.place != goalCheck.ShopName)
                     {
                         Debug.Log("목표 장소!");
                         uiParticle.Emit(10);
@@ -61,7 +69,7 @@ public class InteractionController : MonoBehaviour
                 }
                 DataManager.Instance.CurrentUser.currentPizza = "";
                 UIManager.Instance.SetPizzaText();
-                deliveryManager.DisablePredictReticle();
+                DeliveryManager.Instance.DisablePredictReticle();
             }
         }
     }
