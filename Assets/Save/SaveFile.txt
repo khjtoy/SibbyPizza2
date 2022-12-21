@@ -1,0 +1,6 @@
+﻿{
+    "level": 1,
+    "predictMode": 1,
+    "currentPizza": "",
+    "time": 0
+}

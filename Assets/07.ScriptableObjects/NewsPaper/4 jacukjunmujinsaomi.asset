@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e9fff8f310b9049bb34771b0adfaf9, type: 3}
+  m_Name: 4 jacukjunmujinsaomi
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  story: "\"\uC790\uCD95\uC778\uBB18\uC9C4\uC0AC\uC624\uBBF8\uC2E0\uC720\uC220\uD574\"\n\n\uCD5C\uADFC
+    \uC2DC\uAC04\uC744 \uC2ED\uC774\uC9C0\uB85C \n\uD45C\uD604\uD558\uB294 \uAC83\uC774
+    \uC720\uD589\uC785\uB2C8\uB2E4.\n\n\uC790  \uC950  23 ~ 01\r\n\uCD95  \uC18C
+    01 ~ 03\r\n\uC778  \uD638\uB791\uC774 03 ~ 05\r\n\uBB18  \uD1A0\uB07C 05 ~ 07\r\n\r\n\uC9C4 
+    \uC6A9 07 ~ 09\r\n\uC0AC  \uBC40 09 ~ 11\r\n\uC624  \uB9D0 11 ~ 13\r\n\uBBF8 
+    \uC591 13 ~ 15\r\n\r\n\uC2E0  \uC6D0\uC22D\uC774 15 ~ 17\r\n\uC720  \uB2ED 17
+    ~ 19\r\n\uC2AC  \uAC1C 19 ~ 21\r\n\uD574  \uD0DC\uC601 21 ~ 23."

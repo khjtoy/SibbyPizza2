@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e9fff8f310b9049bb34771b0adfaf9, type: 3}
+  m_Name: 6 faker
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  story: "\"\uCDA9\uACA9. \uD398\uC774\uCEE4 \uAD50\uD1B5\uC0AC\uACE0\uB098...\"\n\n\uD398\uC774\uCEE4\uC528\uAC00
+    \uC5F0\uC2B5\uC2E4\uB85C \uC774\uB3D9\uD558\uB358\uC911\n\uAD50\uD1B5\uC0AC\uACE0\uAC00
+    \uB0AC\uC2B5\uB2C8\uB2E4.\n\uD558\uC9C0\uB9CC \uD50C\uB85C \uD53C\uD574 \uB2E4\uCE5C
+    \uACF3\uC740 \uC5C6\uC2B5\uB2C8\uB2E4.\n\uD398\uC774\uCEE4\uC528\uB294 \"\uBCF4\uACE0
+    \uD50C\uB85C \uD53C\uD558\uC138\uC694\" \n\uB77C\uB294 \uBC18\uC751\uC744 \uBCF4\uC600\uC2B5\uB2C8\uB2E4.\n\n\n"
