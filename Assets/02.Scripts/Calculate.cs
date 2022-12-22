@@ -66,12 +66,13 @@ public class Calculate : MonoBehaviour
             PoolManager.Instance.AllDespawn();
         if (DataManager.Instance.CurrentUser.life2 <= 0)
         {
-            SceneManager.LoadScene((int)Define.Scenes.Failure);
+            DataManager.Instance.CurrentUser.level = 1;
+            SceneManager.LoadScene((int)Define.Scenes.Failure - 1);
             return;
         }
         if (DataManager.Instance.CurrentUser.level >= 8)
         {
-            SceneManager.LoadScene((int)Define.Scenes.Clear);
+            SceneManager.LoadScene((int)Define.Scenes.Clear - 1);
             return;
         }
         TransitionManager.Instance.LoadScene((int)Define.Scenes.Day);

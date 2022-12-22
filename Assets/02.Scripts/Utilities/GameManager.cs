@@ -15,7 +15,10 @@ public class GameManager : MonoSingleton<GameManager>
         UIManager.Instance.ChangeHeart(DataManager.Instance.CurrentUser.life);
         DataManager.Instance.CurrentUser.life--;
         if (DataManager.Instance.CurrentUser.life <= 0)
+        {
+            DataManager.Instance.CurrentUser.level = 1;
             SceneManager.LoadScene((int)Define.Scenes.Failure - 1);
+        }
     }
 
     public void DecreaseLife2()
