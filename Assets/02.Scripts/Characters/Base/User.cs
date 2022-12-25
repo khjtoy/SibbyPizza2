@@ -10,4 +10,5 @@ public class User
     public int scapeGoal = 0;
     public int life = 5;
     public int life2 = 2;
+    public int toturial = 0;
 }

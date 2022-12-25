@@ -71,6 +71,9 @@ public class StartSceneInGameManager : MonoBehaviour
     [SerializeField]
     private Image continueButton;
 
+    [SerializeField]
+    private TextMeshProUGUI toturial;
+
     private int pizzaMoveTutoIDX;
 
     private void Awake()
@@ -217,6 +220,22 @@ public class StartSceneInGameManager : MonoBehaviour
         
     }
 
+    public void NewGoToGame()
+    {
+        if(DataManager.Instance.CurrentUser.toturial == 0)
+        {
+            toturial.DOFade(1, 1f).OnComplete(() =>
+            {
+                toturial.DOFade(0, 2f);
+            });
+            return;
+        }
+        DataManager.Instance.CurrentUser.level = 1;
+        DataManager.Instance.CurrentUser.life = 5;
+        DataManager.Instance.CurrentUser.life2 = 2;
+        GameObject.FindObjectOfType<ButtonManager>().GotoGame2();
+    }
+
     public void GameStart()
     {
         SceneManager.LoadScene("DayScene");
@@ -229,6 +248,7 @@ public class StartSceneInGameManager : MonoBehaviour
 
     public void HowtoPlay()
     {
+        DataManager.Instance.CurrentUser.toturial = 1;
         howToPlayPanel.SetActive(true);
     }
    

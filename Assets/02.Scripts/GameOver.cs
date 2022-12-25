@@ -10,10 +10,16 @@ public class GameOver : MonoBehaviour
 
     private void Start()
     {
-        Destroy(DayManager.Instance.DirectionLight.gameObject);
-        Destroy(DayManager.Instance.gameObject);
-        Destroy(UIManager.Instance.DontDestroyedCanvas.gameObject);
-        Destroy(UIManager.Instance.gameObject);
+        if (DayManager.IsInstantiated)
+        {
+            Destroy(DayManager.Instance.DirectionLight.gameObject);
+            Destroy(DayManager.Instance.gameObject);
+        }
+        if (UIManager.IsInstantiated)
+        {
+            Destroy(UIManager.Instance.DontDestroyedCanvas.gameObject);
+            Destroy(UIManager.Instance.gameObject);
+        }
         StartCoroutine(GameOverAction());
     }
 

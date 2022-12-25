@@ -1,10 +1,11 @@
 ﻿{
-    "level": 2,
+    "level": 1,
     "currentPizza": "",
     "time": 0,
     "currentGoal": 0,
     "failureGoal": 0,
     "scapeGoal": 0,
     "life": 5,
-    "life2": 1
+    "life2": 2,
+    "toturial": 1
 }

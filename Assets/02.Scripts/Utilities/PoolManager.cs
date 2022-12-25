@@ -18,7 +18,6 @@ public class PoolManager : MonoSingleton<PoolManager>
     private List<int> positions;
     void Awake()
     {
-        DontDestroyOnLoad(this);
         pooledObjectsList = new List<List<GameObject>>();
         pooledObjects = new List<GameObject>();
         changeParent = new List<GameObject>();

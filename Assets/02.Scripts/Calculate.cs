@@ -67,6 +67,7 @@ public class Calculate : MonoBehaviour
         if (DataManager.Instance.CurrentUser.life2 <= 0)
         {
             DataManager.Instance.CurrentUser.level = 1;
+            Destroy(DayManager.Instance.gameObject);
             SceneManager.LoadScene((int)Define.Scenes.Failure - 1);
             return;
         }

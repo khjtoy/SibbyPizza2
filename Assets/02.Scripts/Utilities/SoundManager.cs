@@ -132,7 +132,7 @@ public class SoundManager : MonoSingleton<SoundManager>
                 return;
             }
         }
-        s.source.Play();
+           s.source.Play();
     }
 
     public void Stop(string name)
@@ -166,6 +166,18 @@ public class SoundManager : MonoSingleton<SoundManager>
 
     public void GoMain()
     {
+        if (PoolManager.IsInstantiated)
+            PoolManager.Instance.AllDespawn();
+        if (DayManager.IsInstantiated)
+        {
+            Destroy(DayManager.Instance.DirectionLight.gameObject);
+            Destroy(DayManager.Instance.gameObject);
+        }
+        if (UIManager.IsInstantiated)
+        {
+            Destroy(UIManager.Instance.DontDestroyedCanvas.gameObject);
+            Destroy(UIManager.Instance.gameObject);
+        }
         SceneManager.LoadScene("Start");
     }
 }

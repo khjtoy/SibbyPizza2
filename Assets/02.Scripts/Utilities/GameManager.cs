@@ -16,6 +16,8 @@ public class GameManager : MonoSingleton<GameManager>
         DataManager.Instance.CurrentUser.life--;
         if (DataManager.Instance.CurrentUser.life <= 0)
         {
+            if (PoolManager.IsInstantiated)
+                PoolManager.Instance.AllDespawn();
             DataManager.Instance.CurrentUser.level = 1;
             SceneManager.LoadScene((int)Define.Scenes.Failure - 1);
         }
@@ -24,7 +26,6 @@ public class GameManager : MonoSingleton<GameManager>
     public void DecreaseLife2()
     {
         if (DataManager.Instance.CurrentUser.life2 <= 0) return;
-        UIManager.Instance.ChangeHeart2(DataManager.Instance.CurrentUser.life2);
         DataManager.Instance.CurrentUser.life2--;
     }
 }
