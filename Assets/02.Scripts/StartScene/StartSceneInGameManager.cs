@@ -76,6 +76,11 @@ public class StartSceneInGameManager : MonoBehaviour
 
     private int pizzaMoveTutoIDX;
 
+
+    [SerializeField]
+    private GameObject moveKey;
+
+
     private void Awake()
     {
         SoundManager.Instance.AllStop();
@@ -320,6 +325,15 @@ public class StartSceneInGameManager : MonoBehaviour
         pizzaMoveTuto[(pizzaMoveTutoIDX % pizzaMoveTuto.Length)].SetActive(true);
     }
 
+    public void MoveKeyOn()
+    {
+        moveKey.SetActive(true);
+    }
+
+    public void MoveKeyOff()
+    {
+        moveKey.SetActive(false);
+    }
 
     public void Quit()
     {
