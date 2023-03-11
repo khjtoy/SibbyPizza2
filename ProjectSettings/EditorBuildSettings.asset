@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/PolygonCity/Scenes/Start.unity
+    path: Assets/_/16.Scenes/UseScene/Start.unity
     guid: cb4481103ff00114ebc9bfa0bfbbf030
   - enabled: 1
-    path: Assets/DayScene.unity
+    path: Assets/_/16.Scenes/UseScene/DayScene.unity
     guid: 8f34126577c43d6418de75a949312b31
   - enabled: 1
-    path: Assets/PolygonCity/Scenes/Demo 3.unity
+    path: Assets/_/16.Scenes/UseScene/InGame.unity
     guid: 5af9dc6338f72624abf9cdb704ea6a6e
   - enabled: 1
-    path: Assets/Scenes/PizzaShop.unity
+    path: Assets/_/16.Scenes/UseScene/PizzaShop.unity
     guid: 970ab37abde37ce46949a07ae3eed670
   - enabled: 1
-    path: Assets/Scenes/PIzzaMake.unity
+    path: Assets/_/16.Scenes/UseScene/PIzzaMake.unity
     guid: eb22f18e7a878a241bf70794b823fcc4
   - enabled: 1
-    path: Assets/Scenes/CostScene.unity
+    path: Assets/_/16.Scenes/UseScene/CostScene.unity
     guid: 0143d5b5167710244ba4d2cda70f552d
   - enabled: 1
-    path: Assets/Scenes/CutScene.unity
+    path: Assets/_/16.Scenes/UseScene/CutScene.unity
     guid: 7cee582a71c20814ba69d3f64cfe484a
   - enabled: 1
-    path: Assets/Scenes/Clear.unity
+    path: Assets/_/16.Scenes/UseScene/Clear.unity
     guid: bcffff0fa45736840823ec6ece3e4ff1
   m_configObjects: {}
